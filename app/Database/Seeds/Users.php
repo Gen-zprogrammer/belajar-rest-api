@@ -13,20 +13,20 @@ class Users extends Seeder
         for ($i = 0; $i < 10; $i++) {
         $data = [
         [
-        'username' => 'nandang',
-        'password' => 'rahasia',
-        'firstname' => 'Nandang',
-        'lastname' => 'Hermanto',
-        'address' => 'Ciberem,Sumbang',
-        'age' => '17'
+            'username' => 'Bibit Raikhan Azzakki',
+            'password' => '22SA11A021',
+            'firstname' => 'Bibit',
+            'lastname' => 'Azzaki',
+            'address' => 'Karangkobar, Banjarnegara',
+            'age' => '18',
         ],
         [
-        'username' => 'carlos',
-        'password' => 'abcdefgh',
-        'firstname' => 'Roberto',
-        'lastname' => 'Carlos',
-        'address' => 'Brazil',
-        'age' => '17'
+            'username' => 'Jefri Nichol',
+            'password' => '22SA11A000',
+            'firstname' => 'Jefri',
+            'lastname' => 'Nichol',
+            'address' => 'Padang',
+            'age' => '19',
         ]
         ];
         // insert semua data ke tabel

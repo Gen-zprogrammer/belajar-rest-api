@@ -62,15 +62,17 @@ class Validation extends BaseConfig
         'rules' => 'required|is_natural',
         ]
         ];
+
+
         public $update_user = [
         'username' => [
-        'rules' => 'required|min_length[5]|is_unique[users.username,id,{id}]',
+        'rules' => 'required|min_length[5]|is_unique[users.username,id,{$id}]',
         ],
         'password' => [
         'rules' => 'required',
         ],
         'firstname' => [
-            'rules' => 'required',
+        'rules' => 'required',
         ],
         'lastname' => [
         'rules' => 'required',
@@ -82,4 +84,5 @@ class Validation extends BaseConfig
         'rules' => 'required|is_natural',
         ]
         ];
+    
 }

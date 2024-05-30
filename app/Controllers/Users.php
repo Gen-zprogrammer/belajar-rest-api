@@ -9,11 +9,12 @@ class Users extends ResourceController
 {
     protected $modelName = 'App\Models\UsersModel';
     protected $format = 'json';
+
     public function __construct()
     {
-    $this->validation = \Config\Services::validation();
+        $this->validation = \Config\Services::validation();
     }
-   
+
     public function index()
     {
         return $this->respond($this->model->findAll());
@@ -25,17 +26,17 @@ class Users extends ResourceController
         $validate = $this->validation->run($data, 'register');
         $errors = $this->validation->getErrors();
         if ($errors) {
-        return $this->fail($errors);
-    }
+            return $this->fail($errors);
+        }
 
-    $user = new \App\Entities\Users();
-    $user->fill($data);
-    $user->created_by = 0;
-    $user->created_date = date("Y-m-d H:i:s");
-    if ($this->model->save($user)) {
-    return $this->respondCreated($user, 'user created');
+        $user = new \App\Entities\Users();
+        $user->fill($data);
+        $user->created_by = 0;
+        $user->created_date = date("Y-m-d H:i:s");
+        if ($this->model->save($user)) {
+            return $this->respondCreated($user, 'user created');
+        }
     }
-}
 
     public function update($id = null)
     {
@@ -61,7 +62,6 @@ class Users extends ResourceController
         }
     }
 
-  
     public function delete($id = null)
     {
         if (!$this->model->findById($id)) {
@@ -74,11 +74,10 @@ class Users extends ResourceController
 
     public function show($id = null)
     {
-    $data = $this->model->findById($id);
-    if ($data) {
-        return $this->respond($data);
-    }
-        
+        $data = $this->model->findById($id);
+        if ($data) {
+            return $this->respond($data);
+        }
         return $this->fail('id tidak ditemukan');
     }
-}   
+}
